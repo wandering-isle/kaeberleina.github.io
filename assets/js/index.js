@@ -20,11 +20,7 @@ const gradient = new Gradient()
 gradient.initGradient('#gradient-canvas')
 
 Promise.all([
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRyIW6_Jj0sJaY2hsRlx90Fwu_LBos4BgFhaN8oQQGcb7hg-HY83i1amZlaOEUD_xHU9wCWEnJPCHjk/pub?gid=0&single=true&output=csv',
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRyIW6_Jj0sJaY2hsRlx90Fwu_LBos4BgFhaN8oQQGcb7hg-HY83i1amZlaOEUD_xHU9wCWEnJPCHjk/pub?gid=444772691&single=true&output=csv',
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRyIW6_Jj0sJaY2hsRlx90Fwu_LBos4BgFhaN8oQQGcb7hg-HY83i1amZlaOEUD_xHU9wCWEnJPCHjk/pub?gid=250304340&single=true&output=csv',
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRyIW6_Jj0sJaY2hsRlx90Fwu_LBos4BgFhaN8oQQGcb7hg-HY83i1amZlaOEUD_xHU9wCWEnJPCHjk/pub?gid=570507986&single=true&output=csv',
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRyIW6_Jj0sJaY2hsRlx90Fwu_LBos4BgFhaN8oQQGcb7hg-HY83i1amZlaOEUD_xHU9wCWEnJPCHjk/pub?gid=1048322423&single=true&output=csv',
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vRYR5GBovrg2WVFAiKA7CgngdkgwWikzXb1wYfYc1rROpzE14PgSq8T2iq6arSwcdmo12kbFF_KGo3R/pub?gid=0&single=true&output=csv',
 ].map(url => {
     return fetch(url).then(res =>
         res.ok ? res.text() : Promise.reject(res.status))
