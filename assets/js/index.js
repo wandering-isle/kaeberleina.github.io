@@ -48,7 +48,6 @@ function renderPubs(pubs) {
 
     // filter by type
     let byType = document.querySelector('#by-time');
-    console.log('render', filtered, cond);
     // console.log('byType',byType.checked);
     if (byType.checked) {
         filtered = filtered.reduce((acc, d) => {
@@ -177,18 +176,7 @@ function renderPubMaterials(d) {
     // slides, video, code, data, software, supplemental, abstract
 
 }
-let conds = document.querySelectorAll('.filter .chip');
 
-conds.forEach(cond => cond.addEventListener('click', function (event) {
-    if (this.classList.contains('selected') == false) {
-        let selected = document.querySelector('.chip.selected');
-        selected.classList.remove('selected');
-        this.classList.add('selected');
-        console.log('filter', this.dataset.cond);
-        dataCond = this.dataset.cond;
-        renderPubs(allPubs);
-    }
-}));
 document.querySelector('#by-time').addEventListener('change', function () {
     renderPubs(allPubs);
 });
