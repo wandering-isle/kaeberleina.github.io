@@ -63,7 +63,20 @@ function renderPubs(pubs) {
     //     acc[d.year].values.push(d);
     // }, {}).map(group=>group.values);
     
-    
+    filtered = filtered.reduce((acc, d) => {
+            if (!acc[d.type]) {
+                acc[d.type] = [];
+            }
+            acc[d.type].push(d);
+            return acc;
+        }, {});
+
+        // console.log("ACC", Object.entries(filtered));
+        filtered = Object.entries(filtered).map(group => {
+            group[1].sort((a, b) => parseInt(b.year) - parseInt(a.year));
+            return group;
+    });
+
     console.log("filtered publications", filtered);
     // featured.map(d=>d.key)
     let container = document.querySelector('.pubs');
