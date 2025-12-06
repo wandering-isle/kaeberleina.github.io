@@ -256,38 +256,8 @@ for (let i = 1; i <= numImages; i++) {
 
 // let randIdx = Math.floor(Math.random() * numImages) + 1;
 let randIdx = getWeightedRandomIndex(numImages);
-profileImage.src = `/assets/images/profile/photo${randIdx}.png`;
-profileImage.addEventListener('mousemove', function (event) {
-    // let x = event.clientX - this.offsetLeft;
-    // let y = event.clientY - this.offsetTop;
-    // let idx = Math.floor(x / (this.width / numImages)) + 1;
-    // if (idx >= 1 && idx <= numImages) {
-    //     profileImage.src = `/assets/images/profile/photo${idx}.png`;
-    // }
+profileImage.src = `/assets/images/asteria.jpg`;
 
-    let x = event.clientX - this.offsetLeft;
-
-    // 1. Calculate the normalized mouse position (0 to 1)
-    const normalizedPosition = x / this.width;
-
-    // 2. Map the normalized position to the Total Weight range (0 to totalWeight)
-    const weightedValue = normalizedPosition * totalWeight;
-
-    // 3. Find the index that corresponds to the weighted value
-    let idx;
-    for (const item of cumulativeWeights) {
-        if (weightedValue < item.cumulative) {
-            idx = item.index;
-            break; // Found the index, exit the loop
-        }
-    }
-
-    // 4. Update the image source
-    if (idx >= 1 && idx <= numImages) {
-        profileImage.src = `/assets/images/profile/photo${idx}.png`;
-    }
-
-});
 
 
 // function renderPeople(people, container, maxPeople = 20) {
