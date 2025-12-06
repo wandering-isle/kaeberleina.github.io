@@ -44,6 +44,8 @@ section{
   width:100%;
   object-fit: cover;
   border-radius: 5px;
+  border-color: #370294;
+  border-style:ridge;
   /* position: relative;
   height:0; */
   /* padding-top:100%; */
